@@ -3,7 +3,7 @@
 A comprehensive, browser-based dashboard for managing daily shop income and expenses. This application allows users to track financial records, visualize spending habits, and analyze data through time-based filtering.
 
 ## 🚀 Live Demo
-**[View Live App Here](https://Selim01a.github.io/Challenge-Project-Number-1-30/)**
+**[View Live App Here](https://selim01a.github.io/Challenge-Project-Number-1-30/)**
 
 ## 🛠️ Tech Stack
 * **Structure:** HTML5
