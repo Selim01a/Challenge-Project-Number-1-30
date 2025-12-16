@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Accounting App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="header">
+            <button id="theme-toggle" class="btn"
+                style="position: absolute; top: 20px; right: 20px; width: auto; background: transparent; font-size: 1.5rem; color: var(--text-dark);">
+                <i class="fas fa-moon"></i>
+            </button>
+            <h2>Balance: <span id="balance-display">$0</span></h2>
+        </div>
+        <div style="text-align: center; margin-bottom: 15px;">
+            <select id="date-filter"
+                style="width: auto; padding: 5px 15px; border-radius: 20px; background-color: var(--card-bg); color: var(--text-dark); border: 1px solid var(--secondary-color);">
+                <option value="all">📅 All Time</option>
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+            </select>
+        </div>
+        <div class="summary-container">
+            <div class="card income-card">
+                <div>
+                    <h4>Income</h4>
+                    <p id="income-value">+$0.00</p>
+                </div>
+                <i class="fas fa-arrow-up icon"></i>
+            </div>
+            <div class="card expense-card">
+                <div>
+                    <h4>Expense</h4>
+                    <p id="expense-value">-$0.00</p>
+                </div>
+                <i class="fas fa-arrow-down icon"></i>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Add New Transaction</h3>
+            <div class="input-group">
+                <input type="text" id="customerName" placeholder="Customer Name">
+                <input type="text" id="description" placeholder="Description">
+            </div>
+            <div class="input-group">
+                <input type="number" id="amount" placeholder="Amount">
+                <input type="date" id="date">
+            </div>
+            <div class="input-group">
+                <select id="type">
+                    <option value="Income">Income (+)</option>
+                    <option value="Expense">Expense (-)</option>
+                </select>
+                <select id="paymentMethod">
+                    <option value="Cash">Cash</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="EFT">EFT</option>
+                </select>
+                <select id="category">
+                    <option value="General">📂 General</option>
+                    <option value="Food">🍔 Food</option>
+                    <option value="Rent">🏠 Rent</option>
+                    <option value="Salary">💰 Salary</option>
+                    <option value="Transport">🚗 Transport</option>
+                    <option value="Shopping">🛍️ Shopping</option>
+                </select>
+            </div>
+            <button id="addTransaction" class="btn btn-primary">Add Transaction</button>
+            <button id="open-history-btn" class="btn btn-secondary">View History</button>
+        </div>
+
+        <div class="list-section">
+            <h3>Recent Transactions</h3>
+            <ul id="transaction-list">
+                <div id="empty-state" class="empty-state hidden">
+                    <i class="fas fa-receipt"></i>
+                    <p>No transactions yet.</p>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div id="history-modal" class="modal ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Full History</h3>
+                <span id="close-history-btn" class="close-btn">&times;</span>
+            </div>
+            <div class="table-container">
+                <div class="search-bar-container" style="margin-bottom: 15px; display: flex; gap: 10px;">
+                    <input type="text" id="search-input" placeholder="Search by name, category, or note..."
+                        style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Desc</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="full-history-table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
