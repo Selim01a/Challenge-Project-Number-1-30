@@ -1,0 +1,15 @@
+# Klasörleri engellemek için sonuna / koyarız
+node_modules/
+dist/
+
+# Özel dosyaları engellemek için (Güvenlik!)
+.env
+secret_config.json
+
+# Belirli uzantıdaki tüm dosyaları engellemek için * kullanırız
+*.log
+*.tmp
+
+# İşletim sistemi dosyaları
+.DS_Store
+Thumbs.db
